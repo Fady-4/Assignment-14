@@ -1,0 +1,65 @@
+<footer class="border-t border-white/5 mt-10">
+  <div class="max-w-6xl mx-auto px-6 py-16 grid gap-10 md:grid-cols-4 text-sm">
+
+    <div>
+      <div class="flex items-center gap-2 mb-4">
+        <span class="w-1.5 h-4 bg-orangeBrand2 rounded-full"></span>
+        <h4 class="font-bold">ابق على اطلاع</h4>
+      </div>
+      <p class="text-gray-500 mb-5">اشترك للحصول على أحدث المقالات والتحديثات.</p>
+      <div class="space-y-3">
+        <input type="email" placeholder="أدخل بريدك الإلكتروني" class="w-full bg-black/40 border border-white/10 rounded-full px-4 py-2.5 text-xs placeholder:text-gray-500 focus:outline-none focus:border-orangeBrand2">
+        <button class="w-full bg-orangeBrand2 hover:bg-orangeBrand transition font-bold py-2.5 rounded-full text-xs">اشترك</button>
+      </div>
+    </div>
+
+    <div>
+      <div class="flex items-center gap-2 mb-4">
+        <span class="w-1.5 h-4 bg-orangeBrand2 rounded-full"></span>
+        <h4 class="font-bold">التصنيفات</h4>
+      </div>
+      <ul class="space-y-3 text-gray-500">
+        <li><a [routerLink]="['/second']" [queryParams]="{ category: 'إضاءة' }" class="hover:text-orangeBrand2 transition">إضاءة</a></li>
+        <li><a [routerLink]="['/second']" [queryParams]="{ category: 'بورتريه' }" class="hover:text-orangeBrand2 transition">بورتريه</a></li>
+        <li><a [routerLink]="['/second']" [queryParams]="{ category: 'مناظر طبيعية' }" class="hover:text-orangeBrand2 transition">مناظر طبيعية</a></li>
+        <li><a [routerLink]="['/second']" [queryParams]="{ category: 'تقنيات' }" class="hover:text-orangeBrand2 transition">تقنيات</a></li>
+      </ul>
+    </div>
+
+    <div>
+      <div class="flex items-center gap-2 mb-4">
+        <span class="w-1.5 h-4 bg-orangeBrand2 rounded-full"></span>
+        <h4 class="font-bold">استكشف</h4>
+      </div>
+      <ul class="space-y-3 text-gray-500">
+        <li><a routerLink="/first" class="hover:text-orangeBrand2 transition">الرئيسية</a></li>
+        <li><a routerLink="/second" class="hover:text-orangeBrand2 transition">المدونة</a></li>
+        <li><a routerLink="/third" class="hover:text-orangeBrand2 transition">من نحن</a></li>
+      </ul>
+    </div>
+
+    <div>
+      <div class="flex items-center gap-3 mb-4">
+        <div class="w-9 h-9 rounded-full bg-orangeBrand2 flex items-center justify-center font-black">ع</div>
+        <h4 class="font-bold text-lg">عدسة</h4>
+      </div>
+      <p class="text-gray-500 mb-5">مدونة متخصصة في فن التصوير الفوتوغرافي، نشارك معكم أسرار المحترفين ونصائح عملية لتطوير مهاراتكم</p>
+      <div class="flex items-center gap-3">
+        <a href="#" class="w-9 h-9 rounded-full bg-panel flex items-center justify-center hover:bg-panel2 transition"><svg xmlns="http://www.w3.org/2000/svg" class="w-4 h-4" viewBox="0 0 24 24" fill="currentColor"><path d="M23.5 6.2s-.2-1.6-.9-2.3c-.9-.9-1.8-.9-2.3-1C16.9 2.6 12 2.6 12 2.6h0s-4.9 0-8.3.3c-.5.1-1.4.1-2.3 1-.7.7-.9 2.3-.9 2.3S.2 8.1.2 10v1.9c0 1.9.2 3.8.2 3.8s.2 1.6.9 2.3c.9.9 2 .9 2.5 1 1.8.2 7.7.3 7.7.3s4.9 0 8.3-.3c.5-.1 1.4-.1 2.3-1 .7-.7.9-2.3.9-2.3s.2-1.9.2-3.8V10c0-1.9-.2-3.8-.2-3.8zM9.7 14.1V7.6l6.4 3.3-6.4 3.2z"/></svg></a>
+        <a href="#" class="w-9 h-9 rounded-full bg-panel flex items-center justify-center hover:bg-panel2 transition"><svg xmlns="http://www.w3.org/2000/svg" class="w-4 h-4" viewBox="0 0 24 24" fill="currentColor"><path d="M19 3a2 2 0 0 1 2 2v14a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V5a2 2 0 0 1 2-2h14zM8.34 18.34V9.75H5.67v8.59h2.67zM7 8.63a1.55 1.55 0 1 0 0-3.1 1.55 1.55 0 0 0 0 3.1zm11.34 9.71v-4.7c0-2.5-1.34-3.67-3.13-3.67a2.7 2.7 0 0 0-2.44 1.34V9.75H10.1s.03.75 0 8.59h2.67v-4.8c0-.26.02-.51.1-.7.21-.51.68-1.05 1.48-1.05 1.05 0 1.47.8 1.47 1.96v4.59h2.52z"/></svg></a>
+        <a href="#" class="w-9 h-9 rounded-full bg-panel flex items-center justify-center hover:bg-panel2 transition"><svg xmlns="http://www.w3.org/2000/svg" class="w-4 h-4" viewBox="0 0 24 24" fill="currentColor"><path d="M12 2C6.48 2 2 6.58 2 12.25c0 4.53 2.87 8.37 6.84 9.73.5.1.68-.22.68-.49 0-.24-.01-1.04-.01-1.88-2.79.61-3.38-1.21-3.38-1.21-.46-1.18-1.11-1.5-1.11-1.5-.91-.64.07-.62.07-.62 1 .07 1.53 1.05 1.53 1.05.89 1.56 2.34 1.11 2.91.85.09-.66.35-1.11.63-1.37-2.23-.26-4.57-1.14-4.57-5.07 0-1.12.39-2.03 1.03-2.75-.1-.26-.45-1.31.1-2.72 0 0 .84-.27 2.75 1.05a9.3 9.3 0 0 1 5 0c1.91-1.32 2.75-1.05 2.75-1.05.55 1.41.2 2.46.1 2.72.64.72 1.03 1.63 1.03 2.75 0 3.94-2.34 4.8-4.58 5.06.36.32.68.94.68 1.9 0 1.37-.01 2.48-.01 2.81 0 .27.18.6.69.49A10.26 10.26 0 0 0 22 12.25C22 6.58 17.52 2 12 2z"/></svg></a>
+        <a href="#" class="w-9 h-9 rounded-full bg-panel flex items-center justify-center hover:bg-panel2 transition"><svg xmlns="http://www.w3.org/2000/svg" class="w-4 h-4" viewBox="0 0 24 24" fill="currentColor"><path d="M18.9 2H22l-7.6 8.7L23 22h-6.9l-5.4-6.9L4.5 22H1.4l8.1-9.3L1 2h7.1l4.9 6.3L18.9 2zm-1.2 18h1.9L7.4 4H5.4l12.3 16z"/></svg></a>
+      </div>
+    </div>
+  </div>
+
+  <div class="border-t border-white/5">
+    <div class="max-w-6xl mx-auto px-6 py-6 flex flex-wrap items-center justify-between gap-4 text-xs text-gray-500">
+      <span>© 2026 عدسة. جميع الحقوق محفوظة. صنع بكل ❤️</span>
+      <div class="flex items-center gap-6">
+        <a href="#" class="hover:text-orangeBrand2 transition">سياسة الخصوصية</a>
+        <a href="#" class="hover:text-orangeBrand2 transition">شروط الخدمة</a>
+      </div>
+    </div>
+  </div>
+</footer>

@@ -1,0 +1,192 @@
+<section class="relative overflow-hidden">
+  <div class="absolute inset-0 grid-bg"></div>
+  <div class="relative max-w-4xl mx-auto px-6 pt-20 pb-14 text-center">
+    <span class="inline-flex items-center gap-2 bg-panel border border-white/10 rounded-full px-4 py-1.5 text-xs font-bold text-gray-200 mb-8">
+      <span class="w-1.5 h-1.5 rounded-full bg-orangeBrand2"></span>
+      مدونتنا
+    </span>
+    <h1 class="text-4xl md:text-5xl font-black leading-tight mb-5">
+      استكشف <span class="text-orangeBrand2">مقالاتنا</span>
+    </h1>
+    <p class="text-gray-400 text-lg max-w-xl mx-auto">
+      اكتشف الدروس والرؤى وأفضل الممارسات للتطوير الحديث
+    </p>
+  </div>
+</section>
+<section class="max-w-6xl mx-auto px-6 pb-8">
+  <div class="flex flex-wrap items-center justify-between gap-4">
+    <div class="flex flex-wrap items-center gap-2">
+    <div class="flex flex-wrap items-center gap-2">
+  <button type="button" (click)="selectCategory('كل المقالات')" class="px-5 py-2.5 rounded-full text-sm font-bold"
+    [class.bg-orangeBrand2]="activeCategory === 'كل المقالات'" [class.text-white]="activeCategory === 'كل المقالات'">
+    جميع المقالات
+  </button>
+  <button type="button" (click)="selectCategory('إضاءة')" class="cursor-pointer py-2.5 rounded-full text-sm font-bold"
+    [class.bg-orangeBrand2]="activeCategory === 'إضاءة'" [class.text-white]="activeCategory === 'إضاءة'">
+    إضاءة
+  </button>
+  <button type="button" (click)="selectCategory('بورتريه')" class="cursor-pointer px-5 py-2.5 rounded-full text-sm font-bold"
+    [class.bg-orangeBrand2]="activeCategory === 'بورتريه'" [class.text-white]="activeCategory === 'بورتريه'">
+    بورتريه
+  </button>
+  <button type="button" (click)="selectCategory('مناظر طبيعية')" class="cursor-pointer px-5 py-2.5 rounded-full text-sm font-bold"
+    [class.bg-orangeBrand2]="activeCategory === 'مناظر طبيعية'" [class.text-white]="activeCategory === 'مناظر طبيعية'">
+    مناظر طبيعية
+  </button>
+  <button type="button" (click)="selectCategory('تقنيات')" class="cursor-pointer px-5 py-2.5 rounded-full text-sm font-bold"
+    [class.bg-orangeBrand2]="activeCategory === 'تقنيات'" [class.text-white]="activeCategory === 'تقنيات'">
+    تقنيات
+  </button>
+  <button type="button" (click)="selectCategory('معدات')" class="cursor-pointer px-5 py-2.5 rounded-full text-sm font-bold"
+    [class.bg-orangeBrand2]="activeCategory === 'معدات'" [class.text-white]="activeCategory === 'معدات'">
+    معدات
+  </button>
+</div>
+    </div>
+    <div class="relative w-full sm:w-72">
+      <svg xmlns="http://www.w3.org/2000/svg" class="w-4 h-4 text-gray-500 absolute top-1/2 -translate-y-1/2 right-4" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="11" cy="11" r="8"/><path d="m21 21-4.3-4.3"/></svg>
+     <input type="text" [(ngModel)]="searchTerm" placeholder="ابحث في المقالات..." class="...">
+    </div>
+  </div>
+</section>
+
+<section class="max-w-6xl mx-auto px-6 pb-6">
+  <div class="flex items-center justify-between">
+   <div class="flex items-center gap-2">
+  <button type="button" (click)="setViewMode('list')" class="w-10 h-10 rounded-lg flex items-center justify-center transition"
+    [class.bg-orangeBrand2]="viewMode === 'list'" [class.bg-panel]="viewMode !== 'list'">
+    <svg xmlns="http://www.w3.org/2000/svg" class="w-4.5 h-4.5" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><line x1="8" y1="6" x2="21" y2="6"/><line x1="8" y1="12" x2="21" y2="12"/><line x1="8" y1="18" x2="21" y2="18"/><line x1="3" y1="6" x2="3.01" y2="6"/><line x1="3" y1="12" x2="3.01" y2="12"/><line x1="3" y1="18" x2="3.01" y2="18"/></svg>
+  </button>
+  <button type="button" (click)="setViewMode('grid')" class="w-10 h-10 rounded-lg flex items-center justify-center transition"
+    [class.bg-orangeBrand2]="viewMode === 'grid'" [class.bg-panel]="viewMode !== 'grid'">
+    <svg xmlns="http://www.w3.org/2000/svg" class="w-4.5 h-4.5" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="3" y="3" width="7" height="7"/><rect x="14" y="3" width="7" height="7"/><rect x="3" y="14" width="7" height="7"/><rect x="14" y="14" width="7" height="7"/></svg>
+  </button>
+  @if (activeCategory !== 'كل المقالات') {
+  <button type="button" (click)="clearFilters()" class="flex items-center gap-1 text-orangeBrand2 text-sm font-bold hover:text-orangeBrand transition cursor-pointer">
+    <svg xmlns="http://www.w3.org/2000/svg" class="w-4 h-4" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><line x1="18" y1="6" x2="6" y2="18"/><line x1="6" y1="6" x2="18" y2="18"/></svg>
+    مسح الفلاتر
+  </button>
+}
+</div>
+<span class="text-gray-400 text-sm">
+  عرض {{ filteredArticles.length }} مقالة
+  @if (activeCategory !== 'كل المقالات') {
+    في {{ activeCategory }}
+  }
+</span>
+  </div>
+</section>
+
+<section class="max-w-6xl mx-auto px-6 pb-14">
+
+@if (filteredArticles.length > 0) {
+
+  @if (viewMode === 'grid') {
+  <div class="grid md:grid-cols-3 gap-6">
+    @for (article of (activeCategory === 'كل المقالات' ? pagedArticles : filteredArticles); track article.id) {
+      <article class="bg-panel border border-white/5 rounded-2xl overflow-hidden">
+      <div class="relative h-48">
+        <span class="absolute top-3 left-3 z-10 bg-black/70 text-white text-xs font-bold px-3 py-1 rounded-full">{{article.category}}</span>
+        <img [src]="article.image" [alt]="article.title" class="w-full h-full object-cover">
+      </div>
+      <div class="p-6">
+        <div class="flex items-center gap-3 text-xs text-gray-500 mb-3">
+          <span class="flex items-center gap-1">
+            <svg xmlns="http://www.w3.org/2000/svg" class="w-3.5 h-3.5" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="12" r="10"/><path d="M12 6v6l4 2"/></svg>
+            {{ article.readTime }}
+          </span>
+          <span>{{ article.date }}</span>
+        </div>
+        <h3 class="font-black text-lg mb-2">{{ article.title }}</h3>
+        <p class="text-gray-500 text-sm mb-5">{{ article.excerpt }}</p>
+        <div class="flex items-center justify-between pt-4 border-t border-white/5">
+          <button class="w-8 h-8 rounded-full bg-panel2 flex items-center justify-center hover:bg-orangeBrand2/20 transition">
+            <svg xmlns="http://www.w3.org/2000/svg" class="w-4 h-4" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><path d="M19 12H5M12 19l-7-7 7-7"/></svg>
+          </button>
+          <div class="flex items-center gap-2">
+            <div class="text-xs text-left">
+              <div class="font-bold">{{ article.author.name }}</div>
+              <div class="text-gray-500">{{ article.author.role }}</div>
+            </div>
+            <img [src]="article.author.avatar" [alt]="article.author.name" class="w-8 h-8 rounded-full object-cover">
+          </div>
+        </div>
+      </div>
+    </article>
+    }
+  </div>
+  } @else {
+  <div class="space-y-6">
+    @for (article of (activeCategory === 'كل المقالات' ? pagedArticles : filteredArticles); track article.id) {
+      <article class="bg-panel border border-white/5 rounded-3xl overflow-hidden grid md:grid-cols-2">
+        <div class="p-8 flex flex-col justify-center">
+          <div class="flex items-center gap-3 text-xs text-gray-500 mb-3">
+            <span class="bg-orangeBrand2/15 text-orangeBrand2 font-bold px-3 py-1 rounded-full">{{ article.category }}</span>
+            <span class="flex items-center gap-1">
+              <svg xmlns="http://www.w3.org/2000/svg" class="w-3.5 h-3.5" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="12" r="10"/><path d="M12 6v6l4 2"/></svg>
+              {{ article.readTime }}
+            </span>
+            <span>{{ article.date }}</span>
+          </div>
+          <h3 class="text-2xl font-black mb-3">{{ article.title }}</h3>
+          <p class="text-gray-400 mb-6">{{ article.excerpt }}</p>
+          <div class="flex items-center justify-between">
+            <a href="#" class="inline-flex items-center gap-2 text-orangeBrand2 font-bold text-sm">
+              <svg xmlns="http://www.w3.org/2000/svg" class="w-4 h-4" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><path d="M19 12H5M12 19l-7-7 7-7"/></svg>
+              اقرأ المقال
+            </a>
+            <div class="flex items-center gap-2">
+              <img [src]="article.author.avatar" [alt]="article.author.name" class="w-9 h-9 rounded-full object-cover">
+              <div class="text-xs">
+                <div class="font-bold">{{ article.author.name }}</div>
+                <div class="text-gray-500">{{ article.author.role }}</div>
+              </div>
+            </div>
+          </div>
+        </div>
+        <div class="relative min-h-[220px]">
+          <img [src]="article.image" [alt]="article.title" class="absolute inset-0 w-full h-full object-cover">
+        </div>
+      </article>
+    }
+  </div>
+  }
+
+} @else {
+
+  <div class="text-center py-20">
+    <div class="w-16 h-16 mx-auto mb-4 rounded-full bg-panel flex items-center justify-center text-3xl">🙁</div>
+    <h3 class="text-xl font-black mb-2">لا توجد مقالات</h3>
+    <p class="text-gray-500 mb-6">حاول تعديل البحث أو الفلتر للعثور على ما تبحث عنه.</p>
+    <button type="button" (click)="clearFilters()" class="bg-orangeBrand2 hover:bg-orangeBrand transition text-white font-bold px-6 py-3 rounded-full">
+      إعادة تعيين الفلاتر
+    </button>
+  </div>
+
+}
+
+</section>
+<section class="max-w-6xl mx-auto px-6 pb-20 text-center">
+  @if (activeCategory === 'كل المقالات') {
+  <div class="flex items-center justify-center gap-2 mt-8">
+  <button type="button" (click)="prevPage()" class="w-10 h-10 rounded-full bg-panel">‹</button>
+
+  @for (page of [1,2,3,4,5]; track page) {
+    @if (page <= totalPages) {
+      <button type="button" (click)="goToPage(page)" class="w-10 h-10 rounded-full text-sm font-bold"
+        [class.bg-orangeBrand2]="currentPage === page" [class.text-white]="currentPage === page"
+        [class.bg-panel]="currentPage !== page">
+        {{ page }}
+      </button>
+    }
+  }
+
+  <button type="button" (click)="nextPage()" class="w-10 h-10 rounded-full bg-panel">›</button>
+</div>
+
+<p class="text-center text-gray-500 text-sm mt-3">
+  صفحة {{ currentPage }} من {{ totalPages }}
+</p>
+}
+
+</section>

@@ -1,0 +1,15 @@
+/* You can add global styles to this file, and also import other style files */
+@import "tailwindcss";
+
+@theme {
+ --font-sans: 'Tajawal', sans-serif;
+  --color-base: #0a0a0a;
+  --color-panel: #141414;
+  --color-panel2: #1b1b1b;
+  --color-orangeBrand: #f2711c;
+  --color-orangeBrand2: #f97316;
+}
+body{
+    background-color: var(--color-base);
+    color: white;
+}
